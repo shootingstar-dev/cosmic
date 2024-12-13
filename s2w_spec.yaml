@@ -1,0 +1,30 @@
+openapi: 3.0.0
+
+info:
+    title: S2W
+    description: Threat Intelligence services of Account-TakeOver and Threat Actor analysis(IoCs. TTPs)
+    version: "v1"
+
+servers:
+    - url: https://api.quaxar.io/
+
+paths:
+    /tap/{id}:
+        get:
+            operationId: getThreatActorInfo
+            description: |
+              Get Threat Actor Information
+            parameters:
+                - in: path
+                  name: id
+                  schema:
+                      type: string
+                  required: true
+                  description: Threat Actor id (ex.group-threat-actor--36b9159c-aeb6-43d0-a1cd-93b6e577d236)
+            responses:
+                200:
+                    description: OK
+                400:
+                    description: Invalid Argument Error
+                401:
+                    description: Wrong API Key
