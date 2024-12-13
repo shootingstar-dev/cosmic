@@ -6,7 +6,7 @@ info:
     version: "v1"
 
 servers:
-    - url: https://api.quaxar.io/
+    - url: https://api.quaxar.io
 
 paths:
     /tap/{id}:
