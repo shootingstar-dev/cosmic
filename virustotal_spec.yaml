@@ -1,0 +1,30 @@
+openapi: 3.0.0
+
+info:
+    title: Get Virus Total File Hash information
+    description: Get Information about an File Hash from Virus Total
+    version: "v1"
+
+servers:
+    - url: https://www.virustotal.com/api/v3
+
+paths:
+    /files/{hash}:
+        get:
+            operationId: getVirusTotalFileHash
+            description: |
+              Get Virus Total Information for a particular File Hash
+            parameters:
+                - in: path
+                  name: hash
+                  schema:
+                      type: string
+                  required: true
+                  description: File Hash to Lookup (e.g. hash value)
+            responses:
+                200:
+                    description: OK
+                400:
+                    description: Invalid Argument Error
+                401:
+                    description: Wrong API Key
